@@ -25,7 +25,7 @@ app.get('/price/:symbol', function(req, res){
     for(i = 0;i < datas.length; i++){ 
       var data = datas[i];
       var date = moment(data.time * 1000).format("YYYY-MM-DD");
-      result += symbol + "," + date + "," + data.open + "," + data.high + "," + data.low + "," + data.close + "<br>";
+      result += ticket + "," + date + "," + data.open + "," + data.high + "," + data.low + "," + data.close + "<br>";
     }
     res.send(result);
   }).catch(error => {

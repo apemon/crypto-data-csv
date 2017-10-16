@@ -58,3 +58,4 @@ typings/
 .env
 *.txt
 *.bat
+.vscode/

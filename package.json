@@ -1,11 +1,15 @@
 {
-  "name": "crypto-fetcher",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "crypto-fetch",
+  "version": "0.0.1",
+  "description": "Library for fetch historical price data for cryptocurrencies",
+  "main": "index.js",
+  "bin": {
+    "crypto-fetch": "./cli.js"
+  },
   "dependencies": {
     "argv": "0.0.2",
     "cryptocompare": "^0.1.0",
+    "minimist": "^1.2.0",
     "moment": "^2.18.1",
     "node-fetch": "^1.6.3",
     "q": "^1.5.0",
@@ -16,6 +20,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Parin Chiamananthapong",
+  "license": "MIT"
 }

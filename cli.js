@@ -2,12 +2,8 @@
 const fs = require('fs');
 const argv = require('minimist')(process.argv.slice(2));
 const os = require('os');
-var Q = require('q');
 const moment = require('moment');
 const cryptoFetch = require('./index.js');
-// cryptocompare api
-global.fetch = require('node-fetch');
-var cryptocompare = require('cryptocompare');
 
 // parse parameter
 var start = argv.start || argv.s;
@@ -59,16 +55,3 @@ cryptoFetch.getDailyHistoricalPrice(params)
 }).catch(err => {
     return console.log(err);
 });
-
-/*
-function getHistoricalData(fromsymbol, tosymbol, options) {
-    var deferred = Q.defer();
-    cryptocompare.histoDay(fromsymbol,tosymbol,{limit:'none', allData:false})
-      .then(datas => {
-        deferred.resolve(datas);
-      }).catch(error => {
-        deferred.reject(error);
-      });
-    return deferred.promise;
-  }
-  */

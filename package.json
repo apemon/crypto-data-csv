@@ -7,12 +7,8 @@
     "crypto-fetch": "./cli.js"
   },
   "dependencies": {
-    "argv": "0.0.2",
-    "cryptocompare": "^0.1.0",
     "minimist": "^1.2.0",
     "moment": "^2.18.1",
-    "node-fetch": "^1.6.3",
-    "q": "^1.5.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
   },

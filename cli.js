@@ -20,6 +20,7 @@ if(start != null) startTimestamp = moment.utc(start).toDate().getTime();
 if(end != null) endTimestamp = moment.utc(end).toDate().getTime();
 fromsymbol = fromsymbol.toUpperCase();
 tosymbol = tosymbol.toUpperCase();
+if(market == null) market = "cryptocompare";
 market = market.toUpperCase();
 
 var params = {

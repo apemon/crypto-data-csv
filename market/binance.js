@@ -1,7 +1,7 @@
 /**
  * the documentation is from https://www.binance.com/restapipub.html
  */
-var request = require('request-promise');
+const request = require('request-promise');
 const url = require('url');
 
 var rootPath = "https://api.binance.com";

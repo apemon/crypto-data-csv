@@ -18,7 +18,7 @@ function getDailyHistoricalPrice(params) {
     var start = moment.utc(params.startTime);
     var end = moment.utc(params.endTime);
     var duration = moment.duration(end.diff(start));
-    var limit = duration.asDays();
+    var limit = parseInt(duration.asDays());
     // cryptocompare
     var allData = false;
     if(limit > 2000) allData = true;
@@ -26,7 +26,7 @@ function getDailyHistoricalPrice(params) {
         fsym: params.fromsymbol,
         tsym: params.tosymbol,
         limit: limit,
-        toTs: end.toDate().getTime() / 1000,
+        toTs: parseInt(end.toDate().getTime() / 1000),
         allDate: allData
     };
     var promise = new Promise((resolve, reject) => {

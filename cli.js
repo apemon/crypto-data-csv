@@ -16,6 +16,7 @@ var output = argv.output || argv.o;
 // initial parameter
 if(fromsymbol == null || tosymbol == null) return console.log("symbol cannot be null");
 var startTimestamp = 0;
+var endTimestamp = new Date().getTime();
 if(start != null) startTimestamp = moment.utc(start).toDate().getTime();
 if(end != null) endTimestamp = moment.utc(end).toDate().getTime();
 fromsymbol = fromsymbol.toUpperCase();

@@ -36,7 +36,8 @@ symbol, time, open, high, low, close, volume
 | --market, -m | false | cryptocompare | exchange market data source. now support 4 exchanges, which are cryptocompare, binance, bitfinex and poloniex|
 | --output, -o | false |  | output path. If not specify, it will print through console.
 
-For example, you want to get ETH price in USDT (binance use it instead of real dollar) from binance exchange. you can get with these command
+For example, you want to get ETH price in USDT from binance exchange. you can get with these command.  
+Note that binance use tether to represent of real dollar, you can check the [tether price here](https://coinmarketcap.com/currencies/tether/)
 ```
 crypto-fetch -f ETH -t USDT -m binance
 ``` 

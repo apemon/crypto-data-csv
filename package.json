@@ -17,7 +17,7 @@
     "nock": "^9.1.4"
   },
   "scripts": {
-    "test": "mocha tests/*"
+    "test": "mocha tests/*.test.js"
   },
   "author": "Parin Chiamananthapong",
   "license": "MIT"

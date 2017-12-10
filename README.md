@@ -33,7 +33,7 @@ symbol, time, open, high, low, close, volume
 | --tosymbol, -t | true |  | counter party symbol|
 | --start, -s | false|  | start time in YYYY-MM-DD format (ex. 2017-12-01). If not specify, it will get all available information |
 | --end, -e | false |  | end time in YYYY-MM-DD format (ex. 2017-12-01). If not specify, it will be current date
-| --market, -m | false | cryptocompare | exchange market data source. now support 2 exchanges, which are cryptocompare and binance.|
+| --market, -m | false | cryptocompare | exchange market data source. now support 4 exchanges, which are cryptocompare, binance, bitfinex and poloniex|
 | --output, -o | false |  | output path. If not specify, it will print through console.
 
 For example, you want to get ETH price in USD dollor from binance exchange. you can get with these command

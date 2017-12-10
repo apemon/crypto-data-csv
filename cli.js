@@ -2,6 +2,7 @@
 const fs = require('fs');
 const argv = require('minimist')(process.argv.slice(2));
 const os = require('os');
+const path = require('path');
 const moment = require('moment');
 const cryptoFetch = require('./index.js');
 
@@ -52,7 +53,12 @@ cryptoFetch.getDailyHistoricalPrice(params)
     }
     var resultText = lines.join(os.EOL);
     if(output != null) {
-        return fs.writeFileSync(ticket + ".txt", resultText);
+        var filepath = "";
+        if(params.output != null && params.output != "") filepath = path.resolve(params.output);
+        if (path.extname(filepath) == "") {
+            filepath = path.resolve(params.output, ticket + ".csv");
+        }
+        return fs.writeFileSync(filepath, resultText);
     } else return console.log(resultText);
 }).catch(err => {
     return console.log(err);

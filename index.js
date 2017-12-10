@@ -12,7 +12,8 @@
 var marketMap = {
     BINANCE: "./market/binance.js",
     CRYPTOCOMPARE: "./market/cryptocompare.js",
-    BITFINEX: "./market/bitfinex.js"
+    BITFINEX: "./market/bitfinex.js",
+    POLONIEX: "./market/poloniex.js"
 }
 
 function getDailyHistoricalPrice(params) {

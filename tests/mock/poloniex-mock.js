@@ -14,7 +14,8 @@ function PrepareDailyHistoricalPriceMock() {
         command: "returnChartData",
         currencyPair: "ETH_OMG",
         start: 0,
-        period: 86400
+        period: 86400,
+        end: 1512864000
     })
     .reply(200, jsonContent);
     /*!

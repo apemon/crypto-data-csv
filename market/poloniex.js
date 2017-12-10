@@ -25,7 +25,9 @@ function getDailyHistoricalPrice(params) {
     var promise = new Promise((resolve, reject) => {
         request({ url: requestUrl, qs:apiParams })
         .then((res) => {
-            return resolve(_GenerateChartDataResult(symbol, res));
+            var ticks = JSON.parse(res);
+            if(ticks.error) return reject(ticks.error);
+            return resolve(_GenerateChartDataResult(symbol, ticks));
         }).catch((err) => {
             return reject(err);
         });
@@ -33,9 +35,8 @@ function getDailyHistoricalPrice(params) {
     return promise;
 }
 
-function _GenerateChartDataResult(symbol, res) {
+function _GenerateChartDataResult(symbol, ticks) {
     var datas = [];
-    var ticks = JSON.parse(res);
     for(let tick of ticks) {
         data = {
             date: tick.date * 1000,

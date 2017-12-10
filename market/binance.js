@@ -22,7 +22,8 @@ function getDailyHistoricalPrice(params) {
         .then((res) => {
             return resolve(_GenerateKlineResult(apiParams.symbol, res));
         }).catch((err) => {
-            return reject(err);
+            var errorMsg = JSON.parse(err.response.body).msg;
+            return reject(errorMsg);
         });
     });
     return promise;

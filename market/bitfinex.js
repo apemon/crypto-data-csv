@@ -23,7 +23,9 @@ function getDailyHistoricalPrice(params) {
     var promise = new Promise((resolve, reject) => {
         request({ url: requestUrl, qs:apiParams })
         .then((res) => {
-            return resolve(_GenerateCandlesResult(symbol, res));
+            var ticks = JSON.parse(res);
+            if(ticks.length == 0) return reject("Invalid symbol.");
+            return resolve(_GenerateCandlesResult(symbol, ticks));
         }).catch((err) => {
             return reject(err);
         });
@@ -31,9 +33,8 @@ function getDailyHistoricalPrice(params) {
     return promise;
 }
 
-function _GenerateCandlesResult(symbol, res) {
+function _GenerateCandlesResult(symbol, ticks) {
     var datas = [];
-    var ticks = JSON.parse(res);
     for(let tick of ticks) {
         data = {
             date: tick[0],

@@ -20,5 +20,12 @@
     "test": "mocha tests/*.test.js"
   },
   "author": "Parin Chiamananthapong",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apemon/crypto-fetch"
+  },
+  "bugs": {
+    "url": "https://github.com/apemon/crypto-fetch/issues"
+  }
 }
